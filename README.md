@@ -51,12 +51,6 @@ This repo contains solutions to DSA problems solved using:
 
 ---
 
-## 💡 Contribution Guidelines
-
-1. Follow the existing folder structure.
-2. File names should be descriptive (e.g., `FindMiddleOfLinkedList.cpp`).
-3. Add comments explaining the logic and complexity.
-4. Use proper commit messages, for example:
 
 
 
