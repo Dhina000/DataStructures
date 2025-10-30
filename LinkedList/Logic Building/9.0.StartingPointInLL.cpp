@@ -1,24 +1,33 @@
 class Solution {
 public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        if(headA == NULL || headB == NULL) return NULL;
-        
-        ListNode *d1 = headA;
-        ListNode *d2 = headB;
 
-        while (d1 != d2) {
+    ListNode* findStartingPoint(ListNode* head) {
+    
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast != NULL && fast->next != NULL) {
             
-            d1 = d1-> next;
-            d2 = d2-> next;
+            slow = slow->next;
             
-            if(d1 == d2) return d1;
+            fast = fast->next->next;
+
             
-            if(d1 == NULL) d1 = headB;
-            if(d2 == NULL) d2 = headA;
+            if (slow == fast) {
             
-            
+                slow = head;
+
+                while (slow != fast) {
+                    
+                    
+                    slow = slow->next;
+                    fast = fast->next;                
+                }
+                
+                return slow;
+            }
         }
-
-        return d1;
+        
+        return NULL;
     }
 };
